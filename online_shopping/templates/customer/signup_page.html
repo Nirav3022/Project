@@ -1,0 +1,113 @@
+{% extends 'customer\layouts\base.html' %}
+{% load static %}
+{% block title %}Sign up{% endblock title %}
+{% block content %}
+    
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+        <!-- START Navbar -->
+        {% include 'customer\layouts\navbar.html' %}
+        <!-- END Navbar -->
+
+        <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+            <div class="container">
+            <ol class="breadcrumb breadcrumb-alt mb-0">
+                <li class="breadcrumb-item">
+                <a href="{% url 'customer_home' %}"><i class="ci-home"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Sign up</li>
+            </ol>
+            </div>
+        </nav>
+
+
+        <!-- Page container -->
+        <section class="container pt-3 pt-lg-4 pb-lg-6 h-100">
+        <div class="row pb-2 pb-lg-0">
+
+            <div class="col-sm-6" style="background-image: url({% static 'customer\img\ecommerce\signup_img.svg' %}); background-repeat: no-repeat; height:550px;">
+            
+            </div>
+            <!-- Content -->
+            <div class="col-lg-6 mx-auto my-auto">
+                
+                    
+
+                    <h2 class="mb-5 text-center">Sign up</h2>
+
+
+                       
+                        <form action="" method="post" novalidate>
+                            {% csrf_token %}
+                            
+                            <div class="mb-4">
+                                <label class="form-label-lg fname">Username</label>
+                                {{form.username}}
+                                {% if form.username.errors %}
+                                    <span class="fs-sm text-danger">{{form.username.errors|striptags}}</span>
+                                {% endif %}
+                            </div>
+                            
+
+                            <!-- Email input -->
+                            <div class="mb-4">
+                            <label for="email-input" class="form-label-lg email">Email</label>
+                            {{form.email}}
+                            {% if form.email.errors %}
+                                <span class="fs-sm text-danger">{{form.email.errors|striptags}}</span>
+                            {% endif %}
+                            </div>
+
+                            <!-- Password Input -->
+                            <div class="mb-4">
+                                <label for="pass-input" class="form-label-lg">Password</label>
+                                <div class="password-toggle">
+                                    {{form.pswd}}
+                                    <label class="password-toggle-btn" aria-label="Show/hide password">
+                                        <input class="password-toggle-check" type="checkbox">
+                                        <span class="password-toggle-indicator"></span>
+                                    </label>
+                                </div>
+                                {% if form.pswd.errors %}
+                                    <span class="fs-sm text-danger">{{form.pswd.errors|striptags}}</span>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- Confirm Password Input -->
+                            <div class="mb-4">
+                                <label for="pass-input" class="form-label-lg">Confirm Password</label>
+                                <div class="password-toggle">
+                                    {{form.cpswd}}
+                                    <label class="password-toggle-btn" aria-label="Show/hide password">
+                                        <input class="password-toggle-check" type="checkbox">
+                                        <span class="password-toggle-indicator"></span>
+                                    </label>
+                                </div>
+                                {% if form.cpswd.errors %}
+                                    <span class="fs-sm text-danger">{{form.cpswd.errors|striptags}}</span>
+                                {% endif %}
+                            </div>
+
+                            <button type="submit" class="btn btn-primary d-block w-100">Sign up</button>
+
+                            <p class="fs-md pt-4 mb-0" style="text-align: center;">
+                                Already have an account?
+                                <a href="{% url 'signin_page' %}" class="fw-bold text-decoration-none">Sign In</a>
+                            </p>
+
+                            <p class="fs-md pt-4 mb-0 mt-3" style="text-align: center;">
+                                <a href="{% url 'seller_signup_page' %}" class="fw-bold text-decoration-none">Become a seller</a>
+                            </p>
+                        </form>
+                    
+            </div>
+        </div>
+        </section>
+
+
+</main>
+
+
+{% endblock content %}

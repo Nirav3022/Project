@@ -1,0 +1,68 @@
+{% extends 'admin\layouts\base.html' %}
+{% load static %}
+{% block title %}User Details{% endblock title %}
+{% block content %}
+    <main class="content">
+        <div class="container-fluid p-0">
+
+            <h1 class="h3 mb-3">User Details</h1>
+
+            <div class="row">
+                <div class="col-xl-8 mx-auto">
+					<div class="card">
+        
+                        <div class="card-body">
+
+                            {% if details %}
+                                
+
+                                <table class="table my-2 borderless">
+                                    <tbody>
+                                        <div class="row g-0">
+                                            <div class="col-sm-3 col-xl-12 col-xxl-3 text-center">
+                                                <img src="{{details.customerprofile.image.url}}" width="140" height="140" class="rounded-circle mt-2" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <h3 class="text-center my-4">{{details.username}}</h3>
+                                            </div>
+                                        </div>
+                                        <tr>
+                                            <th>Username</th>
+                                            <td>{{details.username}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Email</th>
+                                            <td>{{details.email}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Contact Number</th>
+                                            <td>{{details.customerprofile.contact_number}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Address</th>
+                                            <td>{{details.customerprofile.address}}</td>
+                                        </tr>
+                                        {% comment %} <tr>
+                                            <th>Status</th>
+                                            <td><span class="badge bg-danger">Inactive</span></td>
+                                        </tr> {% endcomment %}
+                                
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <h4 class="text-center my-5">No Customer Details Available</h4>
+                            {% endif %}
+
+                            
+
+                            <a href="{% url 'customers_list' %}" class="btn btn-primary my-2">Back</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </main>
+{% endblock content %}
+
+            

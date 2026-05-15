@@ -1,0 +1,167 @@
+{% extends 'customer\layouts\base.html' %}
+{% load static %}
+{% block title %}Wishlist{% endblock title %}
+
+{% block content %}
+    
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+        
+        <!-- START Navbar -->
+        {% include 'customer\layouts\navbar.html' %}
+        <!-- END Navbar -->
+
+        <!-- Breadcrumb -->
+        <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+            <div class="container">
+            <ol class="breadcrumb breadcrumb-alt mb-0">
+                <li class="breadcrumb-item">
+                <a href="index.html"><i class="ci-home"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+            </ol>
+            </div>
+        </nav>
+
+        <!-- Page container -->
+        <section class="container pt-3 pt-lg-4 pb-5 pb-lg-6">
+        <div class="row pb-2 pb-lg-0">
+
+            
+            <!-- Content -->
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow-lg d-flex p-5 ">
+                    
+
+                    <h2 class="card-title mb-5 mx-auto">Wishlist</h2>
+
+
+                    <div class="card-body" >    
+                        <div class="row mx-n2 mb-5">
+
+                            <!-- Item -->
+                            <div class="col-md-4 col-sm-6 px-2 pb-4 mb-2">
+                                <div class="card card-product mx-auto">
+                                <div class="card-product-img">
+                                    <a href="shop-single.html" class="card-img-top">
+                                    <img src="{% static 'customer/img/ecommerce/shop/01.jpg' %}" alt="Product image">
+                                    </a>
+                                    <div class="card-product-widgets-top">
+                                    <div class="star-rating ms-auto">
+                                        <i class="sr-star ci-star-filled active"></i>
+                                        <i class="sr-star ci-star-filled active"></i>
+                                        <i class="sr-star ci-star-filled active"></i>
+                                        <i class="sr-star ci-star-filled active"></i>
+                                        <i class="sr-star ci-star-filled active"></i>
+                                    </div>
+                                    </div>
+                                    <div class="card-product-widgets-bottom">
+                                    <a href="#" class="btn-wishlist active ms-auto" data-bs-toggle="tooltip" data-bs-placement="left" title="Remove from wishlist"></a>
+                                    </div>
+                                </div>
+                                <div class="card-body pb-2">
+                                    <h3 class="card-product-title text-truncate mb-2">
+                                    <a href="shop-single.html" class="nav-link">Shirt with insertion lace trims</a>
+                                    </h3>
+                                    <div class="d-flex align-items-center">
+                                    <span class="h5 d-inline-block mb-0">$49.95</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex align-items-center mb-2 pb-1">
+                                    <div class="mt-n1">
+                                        <div class="form-check form-option form-option-sm form-option-size form-check-inline mb-2">
+                                        <input type="radio" class="form-check-input" id="s-4-l" name="size-4" checked>
+                                        <label for="s-4-l" class="form-option-label">L</label>
+                                        </div>
+                                        <div class="form-check form-option form-option-sm form-option-size form-check-inline mb-2">
+                                        <input type="radio" class="form-check-input" id="s-4-m" name="size-4">
+                                        <label for="s-4-m" class="form-option-label">M</label>
+                                        </div>
+                                        <div class="form-check form-option form-option-sm form-option-size form-check-inline mb-2">
+                                        <input type="radio" class="form-check-input" id="s-4-s" name="size-4">
+                                        <label for="s-4-s" class="form-option-label">S</label>
+                                        </div>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="form-check form-option form-option-sm form-option-color form-check-inline mb-2">
+                                        <input class="form-check-input" type="radio" name="color-1" id="beige-1" value="Beige">
+                                        <label class="form-option-label rounded-circle" for="beige-1">
+                                            <span class="form-option-color-indicator rounded-circle" style="background-color: #dead9c;"></span>
+                                        </label>
+                                        </div>
+                                        <div class="form-check form-option form-option-sm form-option-color form-check-inline mb-2">
+                                        <input class="form-check-input" type="radio" name="color-1" id="beige-2" value="Beige" checked>
+                                        <label class="form-option-label rounded-circle" for="beige-2">
+                                            <span class="form-option-color-indicator rounded-circle" style="background-color: #7998d1;"></span>
+                                        </label>
+                                        </div>
+                                        <div class="form-check form-option form-option-sm form-option-color form-check-inline mb-2">
+                                        <input class="form-check-input" type="radio" name="color-1" id="beige-3" value="Beige">
+                                        <label class="form-option-label rounded-circle" for="beige-3">
+                                            <span class="form-option-color-indicator rounded-circle" style="background-color: #f4f4f4;"></span>
+                                        </label>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary d-block w-100">
+                                    <i class="ci-cart align-middle mt-n1 me-2"></i>
+                                    Add to cart
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+
+                            <!-- Item -->
+                            <div class="col-md-4 col-sm-6 px-2 pb-4 mb-2">
+                                <div class="card card-product mx-auto">
+                                <div class="card-product-img">
+                                    <a href="shop-single.html" class="card-img-top">
+                                    <img src="{% static 'customer/img/ecommerce/shop/11.jpg' %}" alt="Product image">
+                                    </a>
+                                    <div class="card-product-widgets-top">
+                                    <span class="badge product-badge bg-danger">-50%</span>
+                                    <div class="star-rating ms-auto">
+                                        <i class="sr-star ci-star-filled active"></i>
+                                        <i class="sr-star ci-star-filled active"></i>
+                                        <i class="sr-star ci-star-filled active"></i>
+                                        <i class="sr-star ci-star-filled active"></i>
+                                        <i class="sr-star ci-star"></i>
+                                    </div>
+                                    </div>
+                                    <div class="card-product-widgets-bottom">
+                                    <a href="#" class="btn-wishlist active ms-auto" data-bs-toggle="tooltip" data-bs-placement="left" title="Remove from wishlist"></a>
+                                    </div>
+                                </div>
+                                <div class="card-body pb-2">
+                                    <h3 class="card-product-title text-truncate mb-2">
+                                    <a href="shop-single.html" class="nav-link">Leather crossbody bag with chain lace</a>
+                                    </h3>
+                                    <div class="d-flex align-items-center">
+                                    <span class="h5 d-inline-block text-danger mb-0">$89.50</span>
+                                    <del class="d-inline-block ms-2 ps-1 text-muted">$179.00</del>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary d-block w-100">
+                                    <i class="ci-cart align-middle mt-n1 me-2"></i>
+                                    Add to cart
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+
+    </main>
+
+
+{% endblock content %}
+

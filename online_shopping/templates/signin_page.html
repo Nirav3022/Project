@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  
+    <head>
+    <meta charset="utf-8">
+    <title>Sign In</title>
+
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'customer/img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'customer/img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'customer/img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'customer/img/site.webmanifest' %}">
+    <link rel="mask-icon" color="#5bbad5" href="{% static 'customer/img/safari-pinned-tab.svg' %}">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'customer/vendor/tiny-slider/dist/tiny-slider.css' %}"/>
+
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="{% static 'customer/css/demo/ecommerce/theme.min.css' %}">
+
+  </head>
+
+  <!-- Body-->
+  <body>
+
+    <main class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 mx-auto" style="margin-top:4%; margin-bottom:4%;">
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                                <span class="fw-bold">{{message}}</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <div class="card shadow-lg card-horizontal d-flex p-3 ">
+                        
+                        <div class="card-img-top" style="background-image: url({% static 'customer\img\ecommerce\signin_customers.png' %});"></div>
+                        
+                        <div class="card-body" style="background-color: #f0f5f5;">
+
+                            <h3 class="card-title text-center my-3">Sign In</h3>
+
+                            <form action="" method="POST" novalidate>
+                                {% csrf_token %}
+                                <!-- Username input -->
+                                <div class="mb-4">
+                                <label for="uname-input" class="form-label-lg">Username</label>
+                                {% comment %} <input class="form-control" name="username" type="text" id="uname-input" placeholder="Username"> {% endcomment %}
+                                {{form.username}}
+                                {% if form.username.errors %}
+                                    <span class="fs-sm text-danger">{{form.username.errors|striptags}}</span>
+                                {% endif %}
+                                </div>
+
+                                <!-- Password Input -->
+                                <div class="mb-5">
+                                    <label for="pass-input" class="form-label-lg">Password</label>
+                                    <div class="password-toggle">
+                                        {% comment %} <input class="form-control" name="password" type="password" id="pass-input" placeholder="Password"> {% endcomment %}
+                                        {{form.password}}
+                                        <label class="password-toggle-btn" aria-label="Show/hide password">
+                                            <input class="password-toggle-check" type="checkbox">
+                                            <span class="password-toggle-indicator"></span>
+                                        </label>
+                                    </div>
+                                    {% if form.password.errors %}
+                                    <span class="fs-sm text-danger">{{form.password.errors|striptags}}</span>
+                                {% endif %}
+                                </div>
+
+                                <div class="mb-4" style="text-align: center;">    
+                                    <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                                </div>
+                                
+                            </form>
+                                
+
+                                <p class="fs-md pt-4 mb-0" style="text-align: center;">
+                                    Don't have an account?
+                                    <a href="{% url 'customer_signup' %}" class="fw-bold text-decoration-none">Sign up</a>
+                                </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+            
+    </main>
+
+    
+    <!-- START Scripts -->
+        {% include 'customer\layouts\scripts.html' %}
+    <!-- END Scripts -->
+  </body>
+
+</html>

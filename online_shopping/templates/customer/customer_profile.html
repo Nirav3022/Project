@@ -1,0 +1,129 @@
+{% extends 'customer\layouts\base.html' %}
+{% load static %}
+{% block title %}My Profile{% endblock title %}
+
+{% block content %}
+    
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+        <!-- START Navbar -->
+        {% include 'customer\layouts\navbar.html' %}
+        <!-- END Navbar -->
+
+        <!-- Breadcrumb -->
+        <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+            <div class="container">
+            <ol class="breadcrumb breadcrumb-alt mb-0">
+                <li class="breadcrumb-item">
+                <a href="index.html"><i class="ci-home"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">My profile</li>
+            </ol>
+            </div>
+        </nav>
+
+
+        <!-- Page container -->
+        <section class="container pt-3 pt-lg-4 pb-5 pb-lg-6">
+        <div class="row pb-2 pb-lg-0">
+
+            
+            <!-- Content -->
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow-lg d-flex p-5 ">
+                    
+
+                    <h2 class="card-title mb-5 mx-auto">My profile</h2>
+
+
+                    <div class="card-body" >    
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6 mb-4">
+                                    <label for="ac-fn" class="form-label-lg">First Name</label>
+                                    <input type="text" id="ac-fn" class="form-control form-control-lg mb-4" placeholder="First Name">
+                                    
+                                    <label for="ac-ln" class="form-label-lg">Last Name</label>
+                                    <input type="text" id="ac-ln" class="form-control form-control-lg" placeholder="Last Name">
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <div class="text-center">
+                                        <img src="{% static 'admin\img\avatars\placeholder.jpg' %}" alt="..." id="file-ip-preview" class="rounded-circle img-responsive mt-2" width="128" height="128" style="background-position: center center; background-repeat: no-repeat; overflow: hidden;">
+                                    </div>
+                                    <div class="mt-2 text-center">
+                                        <span class="text-muted fs-sm d-block">Please Upload 500 x 500 image for better result</span>
+                                        <label for="admin_image_upload">
+                                            <span class="btn btn-primary mt-2 mx-auto"><i class="file-drop-icon ci-upload"></i> Upload</span>
+                                        </label>
+                                        <input id="admin_image_upload" type="file" src="" alt="" onchange="showPreview(event)" class="btn btn-primary d-none">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row pb-3">  
+                                <div class="col-sm-6 mb-4">
+                                    <div class="mb-3">
+                                        <label class="form-label-lg">Date of Birth</label>
+                                        <input class="form-control form-control-lg" type="date" placeholder="Choose date">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 mb-4">
+                                    <label for="ac-country" class="form-label-lg">Gender</label>
+                                    <select id="ac-country" class="form-select form-select-lg">
+                                        <option value="" disabled>Choose Gender</option>
+                                        <option value="argentina">Male</option>
+                                        <option value="brazil">Female</option>
+                                        <option value="belgium">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 mb-4">
+                                <label for="ac-email" class="form-label-lg">Email</label>
+                                <input type="email" id="ac-email" class="form-control form-control-lg" placeholder="ann.black@example.com">
+                                </div>
+                                <div class="col-sm-6 mb-4">
+                                <label for="ac-phone" class="form-label-lg">Contact Number</label>
+                                <input type="text" id="ac-phone" class="form-control form-control-lg" placeholder="Contact Number">
+                                </div>
+                                <div class="col-sm-12 mb-4">
+                                    <label for="textarea-input" class="form-label-lg">Address</label>
+                                    <textarea class="form-control" id="textarea-input" rows="3" placeholder="Enter your address here ..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row" style="text-align:right;">
+                                <a href="{% url 'customer_change_password' %}" class="btn text-info btn-link fs-base text-decoration-none">
+                                    <i class="ci-lock fs-lg mt-n1 me-2"></i>
+                                    Change Password?
+                                </a>
+                            </div>
+
+                            
+                            
+                            <button type="submit" class="btn btn-primary btn-lg">&nbsp;Save changes&nbsp;</button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+
+</main>
+
+
+{% endblock content %}
+{% block scripts %}
+    <script>
+        function showPreview(event){
+        if(event.target.files.length > 0) {
+            var src = URL.createObjectURL(event.target.files[0]);
+            var preview = document.getElementById('file-ip-preview');
+            preview.src = src;
+        }
+        }
+  </script>
+{% endblock scripts %}

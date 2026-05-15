@@ -1,0 +1,225 @@
+{% extends 'customer\layouts\base.html' %}
+{% load static %}
+{% block title %}Your Cart{% endblock title %}
+
+{% block content %}
+    
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+        <!-- START Navbar -->
+        {% include 'customer\layouts\navbar.html' %}
+        <!-- END Navbar -->
+
+        <!-- Breadcrumb -->
+        <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+            <div class="container">
+            <ol class="breadcrumb breadcrumb-alt mb-0">
+                <li class="breadcrumb-item">
+                <a href="index.html"><i class="ci-home"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Your Cart</li>
+            </ol>
+            </div>
+        </nav>
+
+        <!-- Page container -->
+        <section class="container pt-3 pt-lg-4 pb-5 pb-lg-6">
+        <div class="row pb-2 pb-lg-0">
+
+            
+            <!-- Content -->
+            <div class="col-lg-8 pe-lg-6">
+                <div class="card shadow-lg d-flex p-2 ">
+                
+                    
+
+                    <h2 class="card-title mt-2 mb-4 mx-auto">Your Cart</h2>
+
+                    
+
+
+                    <div class="card-body" > 
+                        
+                        <!-- Order review -->
+                        <h2 class="h4 mb-4">Order Review</h2>
+                        <div class="bg-secondary rounded mb-5">
+                        <!-- Item -->
+                        <div class="d-flex align-items-start px-2 px-sm-4 py-4 border-bottom">
+                            <a href="shop-single.html" style="min-width: 80px;">
+                            <img src="{% static 'customer/img/ecommerce/cart/01.png' %}" width="80" alt="Product thumb">
+                            </a>
+                            <div class="w-100 ps-3">
+                            <div class="d-sm-flex">
+                                <div class="pe-sm-3 w-100" style="max-width: 16rem;">
+                                <h3 class="fs-sm mb-3">
+                                    <a href="shop-single.html" class="nav-link fw-bold">Basic hooded sweatshirt in pink</a>
+                                </h3>
+                                <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                                    <li class="mb-0"><span class="text-muted">Color:</span> Pink</li>
+                                    <li class="mb-0"><span class="text-muted">Size:</span> S</li>
+                                </ul>
+                                </div>
+                                <div class="d-flex align-items-start pe-sm-3">
+                                <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                                <div class="text-nowrap pt-2"><strong class="text-danger">$15.00</strong> <s class="fs-xs text-muted">$31.00</s></div>
+                                </div>
+                                <div class="d-flex align-items-center flex-sm-column text-sm-center ms-sm-auto pt-3 pt-sm-0">
+                                <button class="btn btn-outline-primary btn-sm me-2 me-sm-0">Delete</button>
+                                <button class="btn btn-link btn-sm text-decoration-none pt-0 pt-sm-2 px-0 pb-0 mt-0 mt-sm-1">
+                                    Move to
+                                    <i class="ci-heart ms-1"></i>
+                                </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Item -->
+                        <div class="d-flex align-items-start px-2 px-sm-4 py-4 border-bottom">
+                            <a href="shop-single.html" style="min-width: 80px;">
+                            <img src="{% static 'customer/img/ecommerce/cart/02.png' %}" width="80" alt="Product thumb">
+                            </a>
+                            <div class="w-100 ps-3">
+                            <div class="d-sm-flex">
+                                <div class="pe-sm-3 w-100" style="max-width: 16rem;">
+                                <h3 class="fs-sm mb-3">
+                                    <a href="shop-single.html" class="nav-link fw-bold">Black and white sport cap</a>
+                                </h3>
+                                </div>
+                                <div class="d-flex align-items-start pe-sm-3">
+                                <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                                <div class="text-nowrap pt-2"><strong>$18.15</strong></div>
+                                </div>
+                                <div class="d-flex align-items-center flex-sm-column text-sm-center ms-sm-auto pt-3 pt-sm-0">
+                                <button class="btn btn-outline-primary btn-sm me-2 me-sm-0">Delete</button>
+                                <button class="btn btn-link btn-sm text-decoration-none pt-0 pt-sm-2 px-0 pb-0 mt-0 mt-sm-1">
+                                    Move to
+                                    <i class="ci-heart ms-1"></i>
+                                </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Item -->
+                        <div class="d-flex align-items-start px-2 px-sm-4 py-4 border-bottom">
+                            <a href="shop-single.html" style="min-width: 80px;">
+                            <img src="{% static 'customer/img/ecommerce/cart/03.png' %}" width="80" alt="Product thumb">
+                            </a>
+                            <div class="w-100 ps-3">
+                            <div class="d-sm-flex">
+                                <div class="pe-sm-3 w-100" style="max-width: 16rem;">
+                                <h3 class="fs-sm mb-3">
+                                    <a href="shop-single.html" class="nav-link fw-bold">Mid-rise slim cropped fit jeans</a>
+                                </h3>
+                                <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                                    <li class="mb-0"><span class="text-muted">Size:</span> M</li>
+                                </ul>
+                                </div>
+                                <div class="d-flex align-items-start pe-sm-3">
+                                <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                                <div class="text-nowrap pt-2"><strong>$76.00</strong></div>
+                                </div>
+                                <div class="d-flex align-items-center flex-sm-column text-sm-center ms-sm-auto pt-3 pt-sm-0">
+                                <button class="btn btn-outline-primary btn-sm me-2 me-sm-0">Delete</button>
+                                <button class="btn btn-link btn-sm text-decoration-none pt-0 pt-sm-2 px-0 pb-0 mt-0 mt-sm-1">
+                                    Move to
+                                    <i class="ci-heart ms-1"></i>
+                                </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Item -->
+                        <div class="d-flex align-items-start px-2 px-sm-4 py-4 border-bottom">
+                            <a href="shop-single.html" style="min-width: 80px;">
+                            <img src="{% static 'customer/img/ecommerce/cart/04.png' %}" width="80" alt="Product thumb">
+                            </a>
+                            <div class="w-100 ps-3">
+                            <div class="d-sm-flex">
+                                <div class="pe-sm-3 w-100" style="max-width: 16rem;">
+                                <h3 class="fs-sm mb-3">
+                                    <a href="shop-single.html" class="nav-link fw-bold">Men fashion gray shoes</a>
+                                </h3>
+                                <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                                    <li class="mb-0"><span class="text-muted">Color:</span> Gray</li>
+                                    <li class="mb-0"><span class="text-muted">Size:</span> 10.5</li>
+                                </ul>
+                                </div>
+                                <div class="d-flex align-items-start pe-sm-3">
+                                <input type="number" class="form-control form-control-sm bg-light me-3" style="width: 4.5rem;" value="1">
+                                <div class="text-nowrap pt-2"><strong>$84.00</strong></div>
+                                </div>
+                                <div class="d-flex align-items-center flex-sm-column text-sm-center ms-sm-auto pt-3 pt-sm-0">
+                                <button class="btn btn-outline-primary btn-sm me-2 me-sm-0">Delete</button>
+                                <button class="btn btn-link btn-sm text-decoration-none pt-0 pt-sm-2 px-0 pb-0 mt-0 mt-sm-1">
+                                    Move to
+                                    <i class="ci-heart ms-1"></i>
+                                </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="px-3 px-sm-4 py-4 text-end">
+                            <span class="text-muted">Subtotal:<strong class="text-dark fs-lg ms-2">$198.65</strong></span>
+                        </div>
+                        </div>
+
+
+                        
+                    </div>
+                 </div>
+            </div>
+
+
+                    <!-- Order totals (sticky sidebar) -->
+                    <!-- For more sticky sidebar options visit https://abouolia.github.io/sticky-sidebar/#options -->
+                    <aside class="col-lg-4">
+                        <div class="sidebar-sticky" data-sidebar-sticky-options='{
+                        "topSpacing": 120,
+                        "minWidth": 991
+                        }'>
+                        <div class="sidebar-sticky-inner">
+                            
+                            <div class="bg-secondary rounded mb-4">
+                            <div class="border-bottom p-4">
+                                <h2 class="h4 mb-0">Order totals</h2>
+                            </div>
+                            <ul class="list-unstyled border-bottom mb-0 p-4">
+                                <li class="d-flex justify-content-between mb-2">
+                                <span class="fw-bold">Subtotal:</span>
+                                <span class="fw-bold">$198.65</span>
+                                </li>
+                                <li class="d-flex justify-content-between mb-2">
+                                <span>Shipping costs:</span>
+                                <span>$25.00</span>
+                                </li>
+                                <li class="d-flex justify-content-between mb-2">
+                                <span>Discount:</span>
+                                <span>&mdash;</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                <span>Estimated sales tax:</span>
+                                <span>$6.35</span>
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-between p-4">
+                                <span class="h5 mb-0">Order total:</span>
+                                <span class="h5 mb-0">$230.00</span>
+                            </div>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-lg d-block w-100">Complete order</button>
+                        </div>
+                        </div>
+                    </aside>
+
+                  
+            </div>
+        </div>
+        </section>
+
+    </main>
+
+
+{% endblock content %}
+

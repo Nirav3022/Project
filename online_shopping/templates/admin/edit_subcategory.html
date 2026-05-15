@@ -1,0 +1,40 @@
+{% extends 'admin\layouts\base.html' %}
+{% load static %}
+{% block title %}Edit Subcategory{% endblock title %}
+{% block content %}
+<main class="content">
+    <div class="container-fluid p-0">
+
+        <h1 class="h3 mb-3">Edit Subcategory</h1>
+
+        <div class="row mt-2">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Edit Subcategory</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="mb-3 error-placeholder">
+                                <label class="form-label">Select Category</label>
+                                {{form.category}}
+                            </div>
+
+                            <div class="mb-3 error-placeholder">
+                                <label class="form-label">Subcategory Name</label>
+                                {{form.subcategory}}
+                            </div>
+
+                            
+                            <a href="{% url 'subcategory' %}" class="btn btn-primary">Back</a>
+                            <input type="submit" class="btn btn-primary mx-2" value="Save">
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

@@ -1,0 +1,114 @@
+{% extends 'seller\layouts\base.html' %}
+{% load static %}
+{% block links %}
+{% endblock links %}
+{% block content %}
+    <main class="content">
+        <div class="container-fluid p-0">
+
+            <h1 class="h3 mb-3">Products Details</h1>
+
+            <div class="row mt-2">
+                <div class="col-sm-12">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Products Details</h5>
+                        </div>
+                        <div class="card-body">
+
+                            <table class="table ">
+                                <tbody>
+                                    <tr>
+                                        <th>Product ID</th>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <td>Realme 6 pro</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Subcategory Name</th>
+                                        <td>Realme</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Category Name</th>
+                                        <td>Mobile</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Description</th>
+                                        <td>6 GB RAM | 64 GB ROM | 30W Fast Charging</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Price</th>
+                                        <td>INR 20,000 RS.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="text-center">
+                                                <img id='prodimgmain' class="rounded me-2 mb-2" src="{% static 'seller/img/avatars/avatar.jpg' %}" alt="Placeholder" width="240" height="240">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class=" row text-center">
+                                                <div class="col-sm-12">
+                                                    <img class="rounded me-2 mb-2" id="prodimg1" src="{% static 'seller/img/avatars/avatar.jpg' %}" alt="Placeholder" width="100" height="100" onmouseover="this.style.cursor = 'pointer'" onclick="change_prodimg(this.id)">
+                                                    <img class="rounded me-2 mb-2" id="prodimg2" src="{% static 'seller/img/avatars/avatar-2.jpg' %}" alt="Placeholder" width="100" height="100" onmouseover="this.style.cursor = 'pointer'" onclick="change_prodimg(this.id)">
+                                                </div>
+                                            </div>
+                                            <div class=" row text-center">
+                                                <div class="col-sm-12">
+                                                    <img class="rounded me-2 mb-2" id="prodimg3" src="{% static 'seller/img/avatars/avatar-3.jpg' %}" alt="Placeholder" width="100" height="100" onmouseover="this.style.cursor = 'pointer'" onclick="change_prodimg(this.id)">
+                                                    <img class="rounded me-2 mb-2 " id="prodimg4" src="{% static 'seller/img/avatars/avatar-4.jpg' %}" alt="Placeholder" width="100" height="100" onmouseover="this.style.cursor = 'pointer'" onclick="change_prodimg(this.id)">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Size and Quntity</th>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                <li>S - 40</li>
+                                                <li>L - 30</li>
+                                                <li>M - 20</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="{% url 'seller_products_list' %}" class="btn btn-primary my-2 ml-auto">Back</a>    
+                                </div>
+                                <div class="col-sm-6" style="text-align: right">
+                                    <a href="#" class="btn btn-danger my-2" >Delete</a>
+                                    <a href="#" class="btn btn-success my-2" >Update</a>
+                                </div>
+                            </div>
+                                
+                            
+                            <div class="ml-auto" style="text-align: right;">
+                                
+                            </div>
+                            
+                                
+                                
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
+{% block scripts %}
+    <script>
+        function change_prodimg(clicked_id){
+            document.getElementById('prodimgmain').src = document.getElementById(clicked_id).src; 
+            
+        }
+    </script>
+{% endblock scripts %}

@@ -1,0 +1,136 @@
+{% extends 'admin\layouts\base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock title %}
+{% block content %}
+<main class="content">
+    <div class="container-fluid p-0">
+
+        <div class="row">
+                <div class="col-sm-12">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{message.tags}} alert-dismissible" role="alert">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <div class="alert-message">
+                                    <strong>{{message}}</strong>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+        <h1 class="h3 mb-3">Profile</h1>
+
+        <div class="row mt-2">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Admin Profile</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data" novalidate>
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="mb-3">
+                                        <label class="form-label">Username</label>
+                                        {{form1.username}}
+                                        {% if form.username.errors %}
+                                            <label class="small text-danger">{{form1.username.errors|striptags}}</label>
+                                        {% endif %}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        {{form1.email}}
+                                        {% if form1.email.errors %}
+                                            <label class="small text-danger">{{form1.email.errors|striptags}}</label>
+                                        {% endif %}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Contact Number</label>
+                                        {{form2.contact_number}}
+                                        {% if form2.contact_number.errors %}
+                                            <label class="small text-danger">{{form2.contact_number.errors|striptags}}</label>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="col text-center mx-auto my-auto">
+                                    <div class="text-center">
+                                        <img src="{{request.user.adminprofile.image.url}}" alt="..." id="file-ip-preview" class="rounded-circle img-responsive mt-2" width="128" height="128">
+                                    </div>
+                                    <div class="mt-2">
+                                        <label for="admin_image_upload">
+                                            <span class="btn btn-primary mt-2"><i class="fas fa-upload"></i> Upload</span>
+                                        </label>
+                                        {{form2.image}}
+                                        {% if form2.image.errors %}
+                                            <label class="small text-danger">{{form2.image.errors|striptags}}</label>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            
+                            
+                            
+                        
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label">City</label>
+                                    {{form2.city}}
+                                    {% if form2.city.errors %}
+                                        <label class="small text-danger">{{form2.city.errors|striptags}}</label>
+                                    {% endif %}
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <label class="form-label">State</label>
+                                    {{form2.state}}
+                                    {% if form2.state.errors %}
+                                        <label class="small text-danger">{{form2.state.errors|striptags}}</label>
+                                    {% endif %}
+                                </div>
+                                <div class="mb-3 col-md-2">
+                                    <label class="form-label">Zip</label>
+                                    {{form2.zipcode}}
+                                    {% if form2.zipcode.errors %}
+                                        <label class="small text-danger">{{form2.zipcode.errors|striptags}}</label>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-primary">Save changes</button>    
+                                </div>
+                                <div class="col-sm-5" style="text-align:right;"> 
+                                    <a href="{% url 'admin_change_password' %}" class="text-info fw-bold fs-lg">Change Password?</a>
+                                </div>
+                            </div>
+
+                            
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+</main>
+{% endblock content %}
+{% block scripts %}
+    <script>
+        function showPreview(event){
+        if(event.target.files.length > 0) {
+            var src = URL.createObjectURL(event.target.files[0]);
+            var preview = document.getElementById('file-ip-preview');
+            preview.src = src;
+        }
+        }
+  </script>
+{% endblock scripts %}

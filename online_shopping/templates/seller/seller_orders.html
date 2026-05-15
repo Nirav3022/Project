@@ -1,0 +1,123 @@
+{% extends 'seller\layouts\base.html' %}
+{% load static %}
+{% block content %}
+<main class="content">
+	<div class="container-fluid p-0">
+
+        <h1 class="h3 mb-3">Your Orders</h1>
+
+        <div class="row mt-2">
+            <div class="col-sm-12">
+
+
+                <div class="tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" href="#tab-1" data-bs-toggle="tab" role="tab">Pending Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tab-2" data-bs-toggle="tab" role="tab">Orders Completed</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab-1" role="tabpanel">
+                            <div class="card my-2">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img class="rounded m-2" src="{% static 'seller/img/avatars/avatar.jpg' %}" alt="Placeholder" width="170" height="170">
+                                    </div>
+                                    <div class="col-sm-8 m-2">
+                                        <ul class="list-unstyled">
+                                            <li class="my-2"><h4 >Order ID: Ord101</h4> </li>
+                                            <li class="my-2"><h5>Product Name: Realme 6 pro</h5></li>
+                                            <li class="my-2"><h5>Size: L</h5></li>
+                                            <li class="my-2"><h5>Quntity: 3</h5></li>
+                                            <li class="my-2"><h5>Price: 20,000</h5> </li>
+                                            <li class="mt-2">
+                                                <button class="btn btn-outline-secondary">Accepted</button>
+                                                <button class="btn btn-outline-success mx-2">Packed</button>
+                                                <button class="btn btn-outline-warning">Delivered</button>
+                                                <button class="btn btn-outline-danger mx-2">Cancel</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card my-2">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img class="rounded m-2" src="{% static 'seller/img/avatars/avatar.jpg' %}" alt="Placeholder" width="170" height="170">
+                                    </div>
+                                    <div class="col-sm-8 m-2">
+                                        <ul class="list-unstyled">
+                                            <li class="my-2"><h4 >Order ID: Ord101</h4> </li>
+                                            <li class="my-2"><h5>Product Name: Realme 6 pro</h5></li>
+                                            <li class="my-2"><h5>Size: L</h5></li>
+                                            <li class="my-2"><h5>Quntity: 3</h5></li>
+                                            <li class="my-2"><h5>Price: 20,000</h5> </li>
+                                            <li class="mt-2">
+                                                <button class="btn btn-outline-secondary">Accepted</button>
+                                                <button class="btn btn-outline-success mx-2">Packed</button>
+                                                <button class="btn btn-outline-warning">Delivered</button>
+                                                <button class="btn btn-outline-danger mx-2">Cancel</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="tab-2" role="tabpanel">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">Orders</h5>
+                                            
+                                        </div>
+                                        <table class="table table-striped table-hover text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Order ID</th>
+                                                    <th>Subcategory Name</th>
+                                                    <th>Category Name</th>
+                                                    <th>Contact Number</th>
+                                                    <th>Address</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>0743</td>
+                                                    <td>Realme</td>
+                                                    <td>Mobiles</td>
+                                                    <td>965842144</td>
+                                                    <td>ahmedabad</td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>0743</td>
+                                                    <td>Shirts</td>
+                                                    <td>Men's Wear</td>
+                                                    <td>965842144</td>
+                                                    <td>ahmedabad</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                
+            
+            </div>
+        </div>
+
+
+	</div>
+</main>
+{% endblock content %}

@@ -1,0 +1,141 @@
+{% extends 'customer\layouts\base.html' %}
+{% load static %}
+{% block title %}My Orders{% endblock title %}
+{% block content %}
+    
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+        
+        <!-- START Navbar -->
+        {% include 'customer\layouts\navbar.html' %}
+        <!-- END Navbar -->
+
+        <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+            <div class="container">
+            <ol class="breadcrumb breadcrumb-alt mb-0">
+                <li class="breadcrumb-item">
+                <a href="index.html"><i class="ci-home"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">My Orders</li>
+            </ol>
+            </div>
+        </nav>
+
+        <!-- Page container -->
+        <section class="container pt-3 pt-lg-4 pb-5 pb-lg-6">
+        <div class="row pb-2 pb-lg-0">
+
+            
+            <!-- Content -->
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow-lg d-flex p-5 ">
+                    
+
+                    <h2 class="card-title mb-5 mx-auto">My Orders</h2>
+
+
+                    <div class="card-body" >    
+                        <div class="accordion accordion-alt " id="orders">
+
+                            <div class="bg-secondary rounded mb-4">
+                                <div class="table-responsive">
+    
+                                    <table class="table mb-0">
+                                    <tbody>
+                                        <tr>
+                                        <td class="border-top-0">
+                                            <div class="d-flex align-items-start ps-2 py-2">
+                                            <a href="shop-single.html" style="min-width: 80px;">
+                                                <img src="{% static 'customer/img/ecommerce/cart/05.png' %}" width="80" alt="Product thumb">
+                                            </a>
+                                            <div class="ps-3">
+                                                <h3 class="fs-sm mb-3">
+                                                <a href="shop-single.html" class="nav-link fw-bold">Green baby romper</a>
+                                                </h3>
+                                                <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                                                <li class="mb-0"><span class="text-muted">Color:</span> Green</li>
+                                                <li class="mb-0"><span class="text-muted">Size:</span> 21</li>
+                                                </ul>
+                                            </div>
+                                            </div>
+                                        </td>
+                                        <td class="border-top-0">
+                                            <div class="py-2">
+                                            <div class="fs-xs text-muted mb-1">Price:</div>
+                                            <div class="fs-sm text-dark">$20.40</div>
+                                            </div>
+                                        </td>
+                                        <td class="border-top-0">
+                                            <div class="py-2">
+                                            <div class="fs-xs text-muted mb-1">Quantity:</div>
+                                            <div class="fs-sm text-dark">2</div>
+                                            </div>
+                                        </td>
+                                        <td class="border-top-0">
+                                            <div class="py-2 pe-3 text-end">
+                                            <div class="fs-xs text-muted mb-1">Status:</div>
+                                            <span class="badge bg-info">In progress</span>
+                                            </div>
+                                        </td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>
+                                            <div class="d-flex align-items-start ps-2 py-2">
+                                            <a href="shop-single.html" style="min-width: 80px;">
+                                                <img src="{% static 'customer/img/ecommerce/cart/06.jpg' %}" width="80" alt="Product thumb">
+                                            </a>
+                                            <div class="ps-3">
+                                                <h3 class="fs-sm mb-3">
+                                                <a href="shop-single.html" class="nav-link fw-bold">Baby shoes with laces</a>
+                                                </h3>
+                                                <ul class="list-unstyled fs-xs mt-n2 mb-2">
+                                                <li class="mb-0"><span class="text-muted">Size:</span> 8</li>
+                                                </ul>
+                                            </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="py-2">
+                                            <div class="fs-xs text-muted mb-1">Price:</div>
+                                            <div class="fs-sm text-dark">$30.75</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="py-2">
+                                            <div class="fs-xs text-muted mb-1">Quantity:</div>
+                                            <div class="fs-sm text-dark">1</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="py-2 pe-3 text-end">
+                                            <div class="fs-xs text-muted mb-1">Status:</div>
+                                            <span class="badge bg-success">Delivered</span>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                    </table>
+                                </div>
+                                </div>
+              
+              
+                        </div>
+
+                           
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+
+</main>
+
+
+{% endblock content %}

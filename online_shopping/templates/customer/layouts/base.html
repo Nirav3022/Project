@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock title %}</title>
+
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'customer/img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'customer/img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'customer/img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'customer/img/site.webmanifest' %}">
+    <link rel="mask-icon" color="#5bbad5" href="{% static 'customer/img/safari-pinned-tab.svg' %}">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Datetime Picker css-->
+    <link rel="stylesheet" href="{% static 'customer\vendor\flatpickr\dist\flatpickr.min.css' %}"/>
+    
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="{% static 'customer/vendor/tiny-slider/dist/tiny-slider.css' %}"/>
+
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="{% static 'customer/css/demo/ecommerce/theme.min.css' %}">
+
+  
+
+    {% block links %}{% endblock links %}
+  </head>
+
+
+  <!-- Body-->
+  <body>
+
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+
+
+    {% block content %} {% endblock content %}
+
+
+    <!-- START Footer -->
+        {% include 'customer\layouts\footer.html' %}
+    <!-- END Footer -->
+
+
+    <!-- START Scripts -->
+    {% include 'customer\layouts\scripts.html' %}
+    <!-- END Scripts -->
+
+    {% block scripts %}{% endblock scripts %}
+    
+  </body>
+
+</html>

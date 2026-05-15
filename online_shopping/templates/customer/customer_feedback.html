@@ -1,0 +1,75 @@
+{% extends 'customer\layouts\base.html' %}
+{% load static %}
+{% block title %}Feedback{% endblock title %}
+{% block content %}
+    
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+        
+        <!-- START Navbar -->
+        {% include 'customer\layouts\navbar.html' %}
+        <!-- END Navbar -->
+
+        <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+            <div class="container">
+            <ol class="breadcrumb breadcrumb-alt mb-0">
+                <li class="breadcrumb-item">
+                <a href="index.html"><i class="ci-home"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Feedback</li>
+            </ol>
+            </div>
+        </nav>
+
+        <!-- Page container -->
+        <section class="container pt-3 pt-lg-4 pb-5 pb-lg-6">
+        <div class="row pb-2 pb-lg-0">
+
+            
+            <!-- Content -->
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow-lg d-flex p-5 ">
+                    
+
+                    <h2 class="card-title mb-5 mx-auto">Feedback</h2>
+
+
+                    <div class="card-body" >    
+                        <form class="needs-validation" novalidate>
+                            <div class="col-sm-12 mb-4">
+                                <label for="cont-name" class="form-label-lg">Name</label>
+                                <input type="text" id="cont-name" class="form-control form-control-lg" placeholder="John Doe" required>
+                                <div class="invalid-feedback">Please let us know your name.</div>
+                            </div>
+                            
+                            <div class="col-sm-12 mb-4">
+                                <label for="cont-email" class="form-label-lg">Email</label>
+                                <input type="email" id="cont-email" class="form-control form-control-lg" placeholder="johndoe@example.com" required>
+                                <div class="invalid-feedback">Please provide valid email address.</div>
+                            </div>
+                                
+                            <div class="col-sm-12 mb-4">
+                                <label for="cont-message" class="form-label-lg">Feedback</label>
+                                <textarea id="cont-message" class="form-control form-control-lg" rows="5" placeholder="Write your feedback here" required></textarea>
+                                <div class="invalid-feedback">Please write your feedback.</div>
+                                </div>
+                                <div class="col-lg-4 col-sm-5 pt-2">
+                                <button type="submit" class="btn btn-primary btn-lg d-block w-100">Send feedback</button>
+                                </div>
+                            </div>
+                            </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+
+</main>
+
+
+{% endblock content %}
